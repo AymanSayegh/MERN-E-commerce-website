@@ -10,12 +10,14 @@ import {
 
 const router = express.Router();
 
+/* CREATE */
+router.post("/addToCart", addToCart);
+
 /* READ */
 router.get("/getProductsInCart/:userId", getProductsInCart);
 router.get("/getCartItemsCount/:userId", getCartItemsCount);
 
 /* UPDATE */
-router.post("/addToCart", addToCart);
 router.put("/updateCartProductQuantity/:productId", updateCartProductQuantity);
 
 /* DELETE */

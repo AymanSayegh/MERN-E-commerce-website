@@ -3,7 +3,7 @@ import { subscribe } from "../controllers/subscriptionController.js";
 
 const router = express.Router();
 
-/* UPDATE */
+/* CREATE */
 router.post("/subscribe", subscribe);
 
 export default router;

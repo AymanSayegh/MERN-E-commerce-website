@@ -6,10 +6,10 @@ import {
 
 const router = express.Router();
 
+/* CREATE */
+router.post("/addCategory", addCategory);
+
 /* READ */
 router.get("/getCategories", getCategories);
-
-/* UPDATE */
-router.post("/addCategory", addCategory);
 
 export default router;

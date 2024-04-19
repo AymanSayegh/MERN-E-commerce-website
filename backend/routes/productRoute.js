@@ -12,6 +12,9 @@ import {
 
 const router = express.Router();
 
+/* CREATE */
+router.post("/addProduct", addProduct);
+
 /* READ */
 router.get("/getProductById/:productId", getProductById);
 router.get("/getProductsByCategory", getProductsByCategory);
@@ -20,7 +23,6 @@ router.get("/getAllProductsSorted", getAllProductsSorted);
 router.get("/searchProducts", searchProducts);
 
 /* UPDATE */
-router.post("/addProduct", addProduct);
 router.put("/editProduct/:productId", editProduct);
 
 /* DELETE */
