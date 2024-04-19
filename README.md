@@ -31,6 +31,7 @@ To run this project, you will need to add the following environment variables to
 - Sort products by popularity or price
 - Add products to favorites
 - Login as admin and add products/categories and delete/edit existing products
+- Fully responsive on mobile devices
 
 ## Run Locally
 
