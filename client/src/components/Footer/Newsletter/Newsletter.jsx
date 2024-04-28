@@ -29,17 +29,15 @@ const Newsletter = () => {
               icon: "success",
             });
             setEmail("");
-          } else if (response.data.message === "Email already exists") {
-            Swal.fire("Already subscribed using this email!", "", "error");
-            setEmail("");
-          } else if (response.data.message === "Invalid email address") {
-            Swal.fire("Please fill a valid email address!", "", "error");
-            setEmail("");
-          } else {
-            console.log(response.data.message);
           }
         })
         .catch((error) => {
+          if (error.response.data.message === "Email already exists") {
+            Swal.fire("Already subscribed using this email!", "", "error");
+          } else if (error.response.data.message === "Invalid email address") {
+            Swal.fire("Please fill a valid email address!", "", "error");
+            setEmail("");
+          }
           console.error("Error during subscription:", error);
         });
     }

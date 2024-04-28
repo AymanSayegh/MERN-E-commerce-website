@@ -10,13 +10,13 @@ export const subscribe = async (req, res) => {
     const { email } = req.body;
 
     if (!validator.isEmail(email)) {
-      return res.json({ message: "Invalid email address" });
+      return res.status(422).json({ message: "Invalid email address" });
     }
 
     const checkUserExistence = await Subscription.findOne({ email });
 
     if (checkUserExistence) {
-      return res.json({ message: "Email already exists" });
+      return res.status(409).json({ message: "Email already exists" });
     }
 
     const newSubscription = await Subscription.create({ email });
